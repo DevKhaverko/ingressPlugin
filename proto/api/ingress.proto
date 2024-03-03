@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./api";
+
+service IngressPlugin {
+  rpc CreateOrChangeRoute(AllocID) returns (Response) {}
+}
+
+message AllocID {
+  string ID = 1;
+}
+
+message Response {
+  bool Result = 1;
+}
